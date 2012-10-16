@@ -7,7 +7,7 @@
 				<% @area_paragraphs.each  do |display| %>
 				<% saved_num = @area_paragraphs.index(display) %>
 
-				<%= display.html_safe %>
+				<h1><%= display.capitalize %></h1>
 				<ul><br> 
 					<% @topic_li_items[saved_num.to_i].each do |display| %>
 					<li> <%= display %> </li>
