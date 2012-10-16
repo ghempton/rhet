@@ -13,7 +13,7 @@ class TopicsController < ApplicationController
 		@topic_li_items = Array.new
 
 		@cat_master_hash.keys.each do |printing|
-			@area_paragraphs << "<h1> #{printing.capitalize} </h1>"
+			@area_paragraphs << printing
 		end	
 
 		@cat_master_hash.values.each do |printing|
