@@ -1,0 +1,13 @@
+body {
+	background-image: url(office.png);
+	color: #C8B560;
+}
+
+h1 {
+	text-shadow: 1px 1px 1px #999999;
+}
+
+li {
+	list-style-type: none;
+
+}

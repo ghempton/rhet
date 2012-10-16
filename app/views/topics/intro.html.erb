@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<head>
+			<title>Topics by Category</title>
+			<link rel="stylesheet" href="styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+				<% @area_paragraphs.each  do |display| %>
+				<% saved_num = @area_paragraphs.index(display) %>
+
+				<%= display.html_safe %>
+				<ul><br> 
+					<% @topic_li_items[saved_num.to_i].each do |display| %>
+					<li> <%= display %> </li>
+				<br> 
+				<% end %>
+				</ul>
+				<% end %>
+
+
+
+	</body>
+</html>
