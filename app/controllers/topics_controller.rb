@@ -5,6 +5,9 @@ require 'yaml'
 
 class TopicsController < ApplicationController
 
+#need a way to expand/collapse topic areas -- jquery?
+#topic randomization/selection (with category choice, without)
+#links to wiki pages based on keywords (some way to automate using source file?) crawl 'further reading' for pdfs and links
 
 	def intro
 		 @cat_master_hash = YAML.load_file('topics.yml')

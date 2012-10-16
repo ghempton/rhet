@@ -1,13 +1,21 @@
 body {
 	background-image: url(office.png);
 	color: #C8B560;
+	font-family: Arial, sans-serif;
 }
 
 h1 {
 	text-shadow: 1px 1px 1px #999999;
+	padding: 20px;
 }
 
 li {
 	list-style-type: none;
+	font-weight: bold;
+	padding: 10px;
+}
 
+a {
+	color: #C8B560;	
+	text-decoration: none;
 }
