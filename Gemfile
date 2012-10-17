@@ -23,6 +23,16 @@ end
 
 gem 'jquery-rails'
 
+# The gems are very useful for debugging, go a google search for 'ruby debug pry' and go through some tutorials
+# in a nut shell you can put 'binding.pry' anywhere in the code to stop there and be able to inspect variables
+gem 'pry'
+gem 'pry-doc'
+gem 'pry-remote'
+gem 'pry-nav'
+gem 'pry-stack_explorer'
+gem 'pry-rescue'
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

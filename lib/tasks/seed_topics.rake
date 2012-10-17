@@ -1,4 +1,5 @@
-task :seed_topics => :environment do 
+task :seed_topics => :environment do
+
 require 'rubygems'
 require 'open-uri'
 require 'nokogiri'
@@ -53,18 +54,19 @@ example_cat_array.each do |page_hash|
     end
 end
 
-cat_master_hash.each do |category_key|
-    topics_array = cat_master_hash[category_key]
+# So when dealing with hash and `each`, the block takes two parameters, the first is the
+# key and the second is the value. Before we were just using one parameter (which defaults to just the value)
+# In a nutshell, we were trying to use the current entry in the hash as the key for that entry.
+cat_master_hash.each do |category_key, topics_array|
     unless topics_array == nil
-    topics_array.each do |topic_entry|
-         new_topic = Topic.new 
-         new_topic.name = topic_entry 
-         new_topic.category = category_key
-         new_topic.type = "official"
-         puts "HERE"
-         new_topic.inspect
-         new_topic.save
-    end
+        topics_array.each do |topic_entry|
+             new_topic = Topic.new 
+             new_topic.name = topic_entry 
+             new_topic.category = category_key
+             new_topic.type = "official"
+             new_topic.inspect
+             new_topic.save
+        end
     end
 end
 
