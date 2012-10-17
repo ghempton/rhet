@@ -1,3 +1,4 @@
+task :seed_topics => :environment do 
 require 'rubygems'
 require 'open-uri'
 require 'nokogiri'
@@ -51,5 +52,23 @@ example_cat_array.each do |page_hash|
             
     end
 end
-f = File.open('topics.yml', 'w')
-YAML.dump(cat_master_hash, f)
+
+cat_master_hash.each do |category_key|
+    topics_array = cat_master_hash[category_key]
+    unless topics_array == nil
+    topics_array.each do |topic_entry|
+         new_topic = Topic.new 
+         new_topic.name = topic_entry 
+         new_topic.category = category_key
+         new_topic.type = "official"
+         puts "HERE"
+         new_topic.inspect
+         new_topic.save
+    end
+    end
+end
+
+
+end
+#f = File.open('topics.yml', 'w')
+#YAML.dump(cat_master_hash, f)
